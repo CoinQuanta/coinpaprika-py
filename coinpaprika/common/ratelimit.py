@@ -1,4 +1,5 @@
-"""Rate limting decorator used for limiting the amount of HTTP requests sent per second."""
+"""Rate limting decorator used for limiting the amount of HTTP requests sent
+per second."""
 
 import time
 import functools
