@@ -72,5 +72,43 @@ class CoinpaprikaAPI(Request):  # pylint: disable=R0904
             coin_id=coin_id,
             quote=quote))
 
+    def people(self, person_id: str):
+        """Get people by ID."""
+        return self.get(API_PATH["people_get_by_id"].format(
+            person_id=person_id))
+
+    def tags(self, additional_fields=""):
+        """List tags."""
+        return self.get(API_PATH["tags_list"].format(
+            additional_fields=additional_fields))
+
+    def tag(self, tag_id: str, additional_fields=""):
+        """Get tag by ID."""
+        return self.get(API_PATH["tag_get_by_id"].format(
+            tag_id=tag_id,
+            additional_fields=additional_fields))
+
+    def tickers(self, quotes=""):
+        """Get tickers for all coins."""
+        return self.get(API_PATH["tickers_list"].format(quotes=quotes))
+
+    def ticker(self, coin_id: str, quotes=""):
+        """Get ticker information for specific coin."""
+        return self.get(API_PATH["ticker_get_information_by_id"].format(
+            coin_id=coin_id,
+            quotes=quotes))
+
+    def historical_tickers(self, coin_id: str, *, start_date: str,
+                           end_date: str="", limit: int=1000,
+                           quote: str="usd", interval: str="5m"):
+        """Get historical tickers for specific coin."""
+        return self.get(API_PATH["ticker_get_historical_by_id"].format(
+            coin_id=coin_id,
+            start_date=start_date,
+            end_date=end_date,
+            limit=limit,
+            quote=quote,
+            interval=interval))
+
 
 #  vim: set ts=4 sw=4 tw=79 ft=python et :
