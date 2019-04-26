@@ -110,5 +110,37 @@ class CoinpaprikaAPI(Request):  # pylint: disable=R0904
             quote=quote,
             interval=interval))
 
+    def exchanges(self, quotes: str=""):
+        """List exchanges."""
+        return self.get(API_PATH["exchanges_list"].format(quotes=quotes))
+
+    def exchange(self, exchange_id: str, quotes: str=""):
+        """Get exchange by ID."""
+        return self.get(API_PATH["exchange_get_by_id"].format(
+            exchange_id=exchange_id,
+            quotes=quotes))
+
+    def exchange_markets(self, exchange_id: str, quotes: str=""):
+        """Get markets by exchange ID."""
+        self.get(API_PATH["exchange_get_markets_by_id"].format(
+            exchange_id=exchange_id,
+            quotes=quotes))
+
+    def search(self, query: str, categories: str="",
+               modifier: str="", limit: int=6):
+        """Search the Coinpaprika API."""
+        return self.get(API_PATH["search"].format(
+            query=query,
+            categories=categories,
+            modifier=modifier,
+            limit=limit))
+
+    def price_converter(self, base_currency_id: str,
+                        quote_currency_id: str, amount: int=0):
+        """Convert currencies."""
+        return self.get(API_PATH["price_converter"].format(
+            base_currency_id=base_currency_id,
+            quote_currency_id=quote_currency_id,
+            amount=amount))
 
 #  vim: set ts=4 sw=4 tw=79 ft=python et :
