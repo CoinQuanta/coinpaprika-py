@@ -15,8 +15,8 @@ class Request(requests.Session):
         "encoding", "reason", "cookies", "elapsed", "request", "json"
     ])
 
-    def __init__(self, debug: bool = False,
-                 headers: Dict[str, str] = None, proxy: Dict[str, str] = None,
+    def __init__(self, debug: bool=False,
+                 headers: Dict[str, str]=None, proxy: Dict[str, str]=None,
                  *args, **kwargs):
         super(Request, self).__init__(*args, **kwargs)
 
