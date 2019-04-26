@@ -1,9 +1,12 @@
-from common.request import Request
-from typing import Dict
+from typing import List, Dict, Union
 
-class CoinpaprikaAPI(Request):
-    def __init__(self, debug: bool = False,
-                 headers: Dict[str, str] = None, proxy: Dict[str, str] = None,
+from .common.request import Request
+from .common.const import API_PATH
+
+
+class CoinpaprikaAPI(Request):  # pylint: disable=R0904
+    def __init__(self, debug: bool=False,
+                 headers: Dict[str, str]=None, proxy: Dict[str, str]=None,
                  *args, **kwargs):
         """Initialize a CoinpaprikaAPI instance.
 
