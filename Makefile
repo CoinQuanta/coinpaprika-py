@@ -1,4 +1,4 @@
-.PHONY: reqs
+.PHONY: reqs clean docs 
 
 HELP_FUNC = \
     %help; \
@@ -14,9 +14,17 @@ HELP_FUNC = \
     }
 
 help:
-	@perl -e '$(HELP_FUNC)' $(MAKEFILE_LIST)
+		@perl -e '$(HELP_FUNC)' $(MAKEFILE_LIST)
 
 reqs:		## Generate requirements.txt using pipreqs
-	pipreqs $(shell pwd)
+		pipreqs $(shell pwd)
+
+clean:		## Delete package build and artifacts
+		rm -rf build/
+		rm -rf dist/
+		rm -rf *.egg-info
+
+docs:		## Generate documentation
+		sphinx-apidoc coinpaprika/ -o docs/source
 
 #  vim: set ts=4 sw=4 tw=79 noet :
