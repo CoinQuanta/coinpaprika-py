@@ -7,6 +7,7 @@ import requests
 
 from .ratelimit import rate_limited
 from .const import API_BASE_ENDPOINT
+from .exceptions import APIException, ClientException
 
 class Request(requests.Session):
 
@@ -35,6 +36,17 @@ class Request(requests.Session):
                                                                      url,
                                                                      *args,
                                                                      **kwargs)
+        # Response status code is less than 400.
+        if req.status_code != requests.codes.ok:
+            status_code = req.status_code
+            error_message = req.json()["error"]
+
+            # If status code response is 4XX.
+            if 400 <= req.status_code < 500:
+                raise ClientException(status_code, error_message)
+            # If status code response is 5XX.
+            elif 500 <= req.status_code < 600:
+                raise APIException(status_code, error_message)
 
         return Request.CoinpaprikaResponse(
             content = req.content,
