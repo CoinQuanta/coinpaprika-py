@@ -31,11 +31,9 @@ class Request(requests.Session):
     @rate_limited(10)
     def request(self, method, path, *args, **kwargs) -> CoinpaprikaResponse:
         """Send a HTTP request."""
-        url: str = API_BASE_ENDPOINT + path
-        req: requests.models.Response = super(Request, self).request(method,
-                                                                     url,
-                                                                     *args,
-                                                                     **kwargs)
+        url = API_BASE_ENDPOINT + path
+        req = super(Request, self).request(method, url, *args, **kwargs)
+
         # Response status code is less than 400.
         if req.status_code != requests.codes.ok:
             status_code = req.status_code
