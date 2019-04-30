@@ -34,7 +34,7 @@ setup(name=PACKAGE_NAME,
       keywords="coinpaprika crypto cryptocurrency api",
       long_description=README,
       license="MIT",
-      url="",
+      url="https://github.com/CoinQuanta/coinpaprika-py",
       packages=["coinpaprika"],
       version=__version__)
 #  vim: set ts=4 sw=4 tw=79 ft=python et :
