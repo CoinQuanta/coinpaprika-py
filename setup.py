@@ -15,7 +15,7 @@ with open(path.join(HERE, "README.md"), encoding="utf-8") as f:
 
 setup(name=PACKAGE_NAME,
       author="CoinQuanta",
-      author_email="github@coinquanta.com",
+      author_email="hello@coinquanta.com",
       description="Access Coinpaprika's API with ease using coinpaprika-py.",
       classifiers=[
           "Development Status :: 5 - Production/Stable",
