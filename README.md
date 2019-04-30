@@ -1,1 +1,1 @@
-# Python-Crypto-API-CoinPaprika
+# coinpaprika-py
