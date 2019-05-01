@@ -8,6 +8,7 @@ from setuptools import setup
 
 __version__ = "1.0-a1"
 PACKAGE_NAME = "coinpaprika"
+
 HERE = path.abspath(path.dirname(__file__))
 
 with open(path.join(HERE, "README.md"), encoding="utf-8") as f:
@@ -35,6 +36,6 @@ setup(name=PACKAGE_NAME,
       long_description=README,
       license="MIT",
       url="https://github.com/CoinQuanta/coinpaprika-py",
-      packages=["coinpaprika"],
+      packages=["coinpaprikaAPI"],
       version=__version__)
 #  vim: set ts=4 sw=4 tw=79 ft=python et :
