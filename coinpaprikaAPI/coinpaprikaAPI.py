@@ -4,18 +4,18 @@ from .common.request import Request
 from .common.const import API_PATH
 
 
-class CoinpaprikaAPI(Request):  # pylint: disable=R0904
+class Coinpaprika(Request):  # pylint: disable=R0904
     def __init__(self, debug: bool=False,
                  headers: Dict[str, str]=None, proxy: Dict[str, str]=None,
                  *args, **kwargs):
-        """Initialize a CoinpaprikaAPI instance.
+        """Initialize a Coinpaprika instance.
 
         Args:
             debug: Output HTTP requests to stdout.
             headers: HTTP headers to with the HTTP request.
             proxy: Send HTTP requests through the supplied proxy.
         """
-        super(CoinpaprikaAPI, self).__init__(debug, headers, proxy,
+        super(Coinpaprika, self).__init__(debug, headers, proxy,
                                              *args, **kwargs)
 
     def global_market(self) -> Dict[str, Union[str, int]]:
