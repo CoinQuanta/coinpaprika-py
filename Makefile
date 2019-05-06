@@ -25,6 +25,6 @@ clean:		## Delete package build and artifacts
 		rm -rf *.egg-info
 
 docs:		## Generate documentation
-		sphinx-apidoc coinpaprika/ -o docs/source
+		sphinx-apidoc coinpaprikaAPI/ -o docs/source
 
 #  vim: set ts=4 sw=4 tw=79 noet :
