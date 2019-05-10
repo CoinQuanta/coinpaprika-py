@@ -4,6 +4,23 @@ coinpaprikaAPI-py: The Python Coinpaprika API Wrapper
 
 coinpaprikaAPI-py is a python package that provides simple access to CoinPaprika's API. CoinpaprikaAPI-py aims to be easy to use and follows all of all of Coinpaprika's rules and limitations. With CoinpaprikaAPI-py there's no need to use `sleep` statements or implement rate limit decorators, the package does it all for you.
 
+What can you do with this API?
+------------------------------
+* Fetch a list of all cryptocoins.
+* Fetch detailed data of a cryptocoin.
+* Fetch the twitter timeline of a cryptocoin.
+* Fetch coin events for a specific cryptocoin.
+* Fetch all markets a cryptocoin is listed on.
+* Fetch market data for a cryptocoin.
+* Fetch daily/historical OHLC data.
+* Fetch associated tags for a cryptocoin.
+* Fetch all cryptocoin tickers.
+* Fetch cryptocurrency exchange data.
+* Search the Coinpaprika API.
+* Convert fiat currency and cryptocurrency and vice versa.
+
+... and more!
+
 Installation
 ------------
 CoinpaprikaAPI-py is supported on python3.4, 3.5, 3.6 and 3.7. The recommended and quickest way to install CoinpaprikaAPI-py is through `pip <https://pypi.python.org/pypi/pip>`_.
